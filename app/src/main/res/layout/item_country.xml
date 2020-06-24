@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="country"
+            type="com.example.hardy.data.models.country_response.Result" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Country : "
+            android:textColor="@android:color/black"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Country : " />
+
+        <TextView
+            android:id="@+id/txtUserNameFromApi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@{country.name}"
+            app:layout_constraintLeft_toRightOf="@id/txtName"
+            app:layout_constraintRight_toLeftOf="@+id/imgUser"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="INDIA" />
+
+        <TextView
+            android:id="@+id/txtCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Code : "
+            android:textColor="@android:color/black"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtName"
+            tools:text="Code : " />
+
+        <TextView
+            android:id="@+id/txtCodeFromApi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="@{country.code}"
+            app:layout_constraintLeft_toRightOf="@id/txtName"
+            app:layout_constraintRight_toLeftOf="@+id/imgUser"
+            app:layout_constraintTop_toTopOf="@+id/txtCode"
+            tools:text="AD" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
